@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機械学習：牛の個体識別 | Masuda Hizuru</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="detail-container">
+    <a href="index.html" class="back-link">← トップページに戻る</a>
+    
+    <h1>牛の個体識別データの自動生成</h1>
+    <p><strong>使用技術:</strong> Python, PyTorch, CycleGAN, pix2pix, 畳み込みオートエンコーダ (CAE)</p>
+    
+    <h3>研究の背景と目的</h3>
+    <p>近年、牛の個体識別は装着された耳標（じひょう）の番号に依存しており、人手による確認作業が大きな負担となっています。本研究では、カメラを用いた自動識別システムの導入に向けて、AI学習用の「耳標画像データ」を自動生成することを目的としました。</p>
+
+    <h3>アプローチ：生成モデルによるスタイル変換</h3>
+    <p>ペアデータが存在しないドメインA（疑似耳標画像）からドメインB（実写の汚れた耳標画像）への画像スタイル変換を行うため、複数の生成モデルを実装し、精度の比較検証を行いました。</p>
+
+    <h3>実験結果と比較</h3>
+    <ul>
+        <li><strong>畳み込みオートエンコーダ (CAE):</strong> 実画像のようなテクスチャは生成できたものの、肝心な「数字」の形状が崩れてしまい、再現性がありませんでした。</li>
+        <li><strong>CycleGAN:</strong> 実画像とまったく異なる画像が生成されてしまい、今回のタスクには不向きな結果となりました。</li>
+        <li><strong>pix2pix (提案手法):</strong> ペア学習を用いることで、元の数字の形を綺麗に保ちつつ、実写特有の汚れや質感をリアルに再現することに成功しました！</li>
+    </ul>
+
+    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+        <div class="screenshot-placeholder" style="flex: 1; height: 200px;">
+            [入力：疑似耳標画像]
+        </div>
+        <div class="screenshot-placeholder" style="flex: 1; height: 200px;">
+            [出力：pix2pix生成画像]
+        </div>
+    </div>
+    <p style="text-align: center; color: #666; font-size: 0.9rem;">左: 入力画像（ドメインA） / 右: pix2pixによる生成結果（ドメインB）</p>
+
+</div>
+
+</body>
+</html>
