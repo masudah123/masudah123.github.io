@@ -2,10 +2,146 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuda Hizuru | Portfolio</title>
+    <style>
+        /* シンプルでモダンなデザインのベース */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #fff;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        /* APUshionをドーン！と見せるセクション */
+        .hero {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .hero h2 {
+            color: #007AFF; /* Flutterっぽい青 */
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-tag {
+            background: #e1f0ff;
+            color: #007AFF;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .screenshot-placeholder {
+            background: #eee;
+            width: 100%;
+            height: 400px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: #888;
+        }
+        /* その他のセクション */
+        .section-title {
+            border-left: 5px solid #333;
+            padding-left: 1rem;
+            margin: 2.5rem 0 1.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>こんにちは！</h1>
-    <p>これからここにポートフォリオを作っていきます。</p>
+
+<header>
+    <h1>増田 ひづる (Masuda Hizuru)</h1>
+    <p>高専 情報工学科 5年 / ソフトウェアエンジニア</p>
+</header>
+
+<div class="container">
+    <section class="hero">
+        <span class="project-tag">Featured Project</span>
+        <h2>APUshion</h2>
+        <p><strong>Flutter × Firebase モバイルアプリ開発</strong></p>
+        
+        <div class="screenshot-placeholder">
+            [ここにアプリのスクリーンショットや動画を入れる]
+        </div>
+
+        <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+            <p>前任者から引き継いだプロジェクトを再構築し、Firebaseを用いたインフラ整備と新機能開発を担当しています。</p>
+            <ul>
+                <li>Firebase Authentication/Firestoreによるユーザー管理</li>
+                <li>管理者と一般ユーザーでの権限に応じた画面遷移の実装</li>
+                <li>GitHubを用いたチーム開発の環境整備</li>
+            </ul>
+        </div>
+    </section>
+
+    <h3 class="section-title">Research & Projects</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>機械学習：牛の個体識別</h4>
+            <p>CycleGANやpix2pix、CAEを用いた耳標画像のスタイル変換と精度比較。データ不足をAI生成で解決する研究を行っています。</p>
+        </div>
+        <div class="card">
+            <h4>組み込みシステム制御</h4>
+            <p>ハードウェアを直接動かす「組み込み」が大好きです。C/C++を用いたマイコン制御などの成果物を掲載予定。</p>
+        </div>
+    </div>
+
+    <h3 class="section-title">About Me</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>Skills</h4>
+            <p>Dart (Flutter), Python, C/C++, Firebase, Git</p>
+        </div>
+        <div class="card">
+            <h4>Activity</h4>
+            <p>足踏みミシンの修理とフィリピン等への寄付ボランティアに参加。技術を誰かのために役立てることに喜びを感じます。</p>
+        </div>
+        <div class="card">
+            <h4>Challenge</h4>
+            <p>IELTS 7.5取得に向けた英語学習や、毎日の韓国語学習を継続中。小学生から続けているイラスト制作もライフワークです。</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Masuda Hizuru. Built with HTML, CSS and Git.
+</footer>
+
 </body>
 </html>
